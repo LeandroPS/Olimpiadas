@@ -1,24 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="formulario">
 
-<p>
-  <strong>Nome:</strong>
-  <%= @atleta.nome %>
-</p>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Photo:</strong>
-	<%= image_tag @atleta.photo, class: "profile-pic"%>
-</p>
+	<div class="page-header">
+		<%= image_tag @atleta.photo, class: "profile-pic middle"%>
+		<h1><%= @atleta.nome %></h1>
+	</div>
 
-<p>
-  <strong>Descricao:</strong>
-  <%= @atleta.descricao %>
-</p>
+	<p>
+		<strong>Descricao:</strong>
+		<%= @atleta.descricao %>
+	</p>
 
-<p>
-  <strong>Modalidade:</strong>
-  <%= @atleta.modalidade.nome %>
-</p>
+	<p>
+		<strong>Modalidade:</strong>
+		<%= @atleta.modalidade.nome %>
+	</p>
 
-<%= link_to 'Edit', edit_atleta_path(@atleta) %> |
-<%= link_to 'Back', atletas_path %>
+	<%= link_to 'Back', atletas_path, class: "btn btn-default" %>
+	<%= link_to 'Edit', edit_atleta_path(@atleta), class: "btn btn-info" %>
+
+</div>

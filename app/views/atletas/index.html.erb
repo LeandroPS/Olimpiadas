@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Atletas</h1>
+
+	<div class="page-header">
+		<h1>Atletas</h1>
+	</div>
 
 <table class="table">
   <thead>
     <tr>
+			<th></th>
       <th>Nome</th>
-      <th>Photo</th>
       <th>Descricao</th>
       <th>Modalidade</th>
       <th colspan="3"></th>
@@ -16,13 +19,16 @@
   <tbody>
     <% @atletas.each do |atleta| %>
       <tr>
+				<td><%= image_tag atleta.photo, class: "profile-pic mini" %></td>
         <td><%= atleta.nome %></td>
-        <td><%= image_tag atleta.photo, class: "profile-pic mini" %></td>
         <td><%= atleta.descricao %></td>
         <td><%= atleta.modalidade.nome %></td>
-        <td><%= link_to 'Show', atleta %></td>
-        <td><%= link_to 'Edit', edit_atleta_path(atleta) %></td>
-        <td><%= link_to 'Destroy', atleta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+					<%= link_to 'Mostrar', atleta %>
+						
+				</td>
+        <td><%= link_to 'Editar', edit_atleta_path(atleta) %></td>
+        <td><%= link_to 'Excluir', atleta, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Atleta', new_atleta_path, class: "btn btn-success" %>
+<%= link_to 'Novo Atleta', new_atleta_path, class: "btn btn-success" %>

@@ -1,14 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="formulario">
 
-<p>
-  <strong>Nome:</strong>
-  <%= @modalidade.nome %>
-</p>
+	<p id="notice"><%= notice %></p>
+	
+	<div class="page-header">
+		<h1><%= @modalidade.nome %></h1>
+	</div>
+	<p>
+		<%= @modalidade.descricao %>
+	</p>
+	
+	<%= link_to 'Back', modalidades_path, class: "btn btn-default" %>
+	<%= link_to 'Edit', edit_modalidade_path(@modalidade), class: "btn btn-info" %>
 
-<p>
-  <strong>Descricao:</strong>
-  <%= @modalidade.descricao %>
-</p>
-
-<%= link_to 'Edit', edit_modalidade_path(@modalidade) %> |
-<%= link_to 'Back', modalidades_path %>
+</div>

@@ -54,6 +54,11 @@ div.home{
 		text-align: center;
 	}
 
+	.formulario img{
+		max-width: 100px;
+		max-height: 100px;
+	}
+
 .profile-pic{
 	max-width: 100px;
 	max-height: 100px;
@@ -64,6 +69,12 @@ div.home{
 	.profile-pic.mini{
 		max-width: 20px;
 		max-height: 20px;
+	}
+
+	.profile-pic.middle{
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 
 

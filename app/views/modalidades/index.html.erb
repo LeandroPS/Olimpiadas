@@ -16,9 +16,9 @@
       <tr>
         <td><%= modalidade.nome %></td>
         <td><%= modalidade.descricao %></td>
-        <td><%= link_to 'Show', modalidade %></td>
-        <td><%= link_to 'Edit', edit_modalidade_path(modalidade) %></td>
-        <td><%= link_to 'Destroy', modalidade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', modalidade %></td>
+        <td><%= link_to 'Editar', edit_modalidade_path(modalidade) %></td>
+        <td><%= link_to 'Excluir', modalidade, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Modalidade', new_modalidade_path, class: "btn btn-success" %>
+<%= link_to 'Nova Modalidade', new_modalidade_path, class: "btn btn-success" %>
