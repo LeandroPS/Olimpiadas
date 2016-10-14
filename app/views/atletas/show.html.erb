@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @atleta.nome %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+	<%= image_tag @atleta.photo, class: "profile-pic"%>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @atleta.descricao %>
+</p>
+
+<p>
+  <strong>Modalidade:</strong>
+  <%= @atleta.modalidade.nome %>
+</p>
+
+<%= link_to 'Edit', edit_atleta_path(@atleta) %> |
+<%= link_to 'Back', atletas_path %>

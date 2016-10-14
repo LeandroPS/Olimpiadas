@@ -1,0 +1,46 @@
+<div class="formulario">
+
+	<h1>Novo Atleta</h1>
+
+	<%= form_for(atleta) do |f| %>
+		<% if atleta.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(atleta.errors.count, "error") %> prohibited this atleta from being saved:</h2>
+
+				<ul>
+				<% atleta.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+		<div class="field">
+			<%= f.label :nome %>
+			<%= f.text_field :nome, class: "form-control" %>
+		</div>
+
+	 <div>
+			<%= f.label :photo %>
+			<%= image_tag @atleta.photo_url, class: 'photo' if @atleta.photo? %>
+			<%= f.file_field :photo, label: 'Foto' , input_html: {accept: ('application/jpg') } %>
+		</div>
+
+		<div class="field">
+			<%= f.label :descricao %>
+			<%= f.text_field :descricao, class: "form-control" %>
+		</div>
+
+		<div class="field">
+			<%= f.label :modalidade_id %>
+			<%= f.select :modalidade_id, Modalidade.all.map{ |u| [u.nome, u.id] }, {}, {class: "form-control"} %>
+			<%= link_to "Nova Modalidade", new_modalidade_path, class: "btn btn-primary" %>
+		</div>
+
+		<div class="actions">
+
+			<%= link_to 'Back', atletas_path, class: "btn btn-default"  %>
+			<%= f.submit "Registrar", :class => "btn btn-success" %>
+		</div>
+	<% end %>
+</div>
